@@ -1,0 +1,202 @@
+.main {
+  border-top: 1px solid #e6e6e6;
+  position: relative;
+  z-index: 2;
+}
+
+.toggleAll {
+  border: none;
+  bottom: 100%;
+  height: 1px;
+  opacity: 0;
+  position: absolute;
+  right: 100%;
+  width: 1px;
+}
+
+.toggleAll + label:before {
+  color: #949494;
+  content: '❯';
+  display: inline-block;
+  font-size: 22px;
+  padding: 10px 27px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.toggleAll + label {
+  align-items: center;
+  display: flex;
+  font-size: 0;
+  height: 65px;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: -65px;
+  width: 45px;
+}
+
+.toggleAll {
+  height: 60px !important;
+  right: auto !important;
+  width: 40px !important;
+}
+
+.toggleAllLabel {
+  pointer-events: none;
+}
+
+.todoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toggleAll:focus + label,
+.toggle:focus + label,
+:focus {
+  box-shadow: 0 0 2px 2px #cf7d7d;
+  outline: 0;
+}
+
+.todoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todoList li {
+  border-bottom: 1px solid #ededed;
+  font-size: 24px;
+  position: relative;
+}
+
+/* input toggle */
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .todoList li .toggle {
+    height: 40px;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .todoList li .toggle,
+  .toggle-all {
+    background: none;
+  }
+}
+.todoList li .toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  bottom: 0;
+  height: auto;
+  margin: auto 0;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 40px;
+}
+
+/* edit */
+
+.edit,
+.new-todo {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: inherit;
+  line-height: 1.4em;
+  margin: 0;
+  padding: 13px 13px 13px 60px;
+  position: relative;
+  width: 100%;
+}
+
+.edit:focus,
+.edit:hover {
+  outline: none;
+}
+
+/* label todo-item-label */
+
+.todoList li .toggle + label {
+  background-image: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23949494%22%20stroke-width%3D%223%22/%3E%3C/svg%3E);
+  background-position: 0;
+  background-repeat: no-repeat;
+}
+
+.todoList li .toggle:checked + label {
+  background-image: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%2359A193%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20fill%3D%22%233EA390%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22%2F%3E%3C%2Fsvg%3E);
+}
+.todoList li.completed label {
+  color: #949494;
+  text-decoration: line-through;
+}
+
+.todoList li label {
+  color: #484848;
+  display: block;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 15px 15px 15px 60px;
+  transition: color 0.4s;
+  word-break: break-all;
+}
+.toggleAll:focus + label,
+.toggle:focus + label,
+:focus {
+  box-shadow: 0 0 2px 2px #cf7d7d;
+  outline: 0;
+}
+
+.toggleAll:checked + label:before {
+  color: #484848;
+}
+
+/* Button destroy */
+button {
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  vertical-align: baseline;
+}
+
+.todoList li .destroy:after {
+  content: '×';
+  display: block;
+  height: 100%;
+  line-height: 1.1;
+}
+
+.todoList li:hover .destroy {
+  display: block;
+}
+.todoList li .destroy:focus,
+.todoList li .destroy:hover {
+  color: #c18585;
+}
+.todoList li .destroy {
+  bottom: 0;
+  color: #949494;
+  display: none;
+  font-size: 30px;
+  height: 40px;
+  margin: auto 0;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  transition: color 0.2s ease-out;
+  width: 40px;
+}
